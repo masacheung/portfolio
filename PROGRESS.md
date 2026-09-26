@@ -3,7 +3,8 @@
 > For the next Hermes session: read this first. Task: full redesign of Masa Cheung's
 > portfolio site (4–5 years old) in `~/Documents/Projects/portfolio`.
 
-## Status: ~85% done — mid-way through user feedback round 1
+## Status: DONE — feedback round 1 complete, pushed (f5dabca → new commit)
+
 
 Branch: **`astro-redesign`** (pushed to `origin/astro-redesign`, remote: github.com/masacheung/portfolio)
 Old site preserved: `old-site/` dir + `main` branch (untouched). Do NOT delete.
@@ -22,16 +23,14 @@ Old site preserved: `old-site/` dir + `main` branch (untouched). Do NOT delete.
 ## User feedback round 1 (IN PROGRESS — this is what remains)
 
 User said the dark theme is nice BUT:
-1. ✅ Logo `~/masa-cheung` → replace with **profile photo + "Masa Cheung" text**
-2. ⬜ **Switch whole site from dark to light theme** — user thinks pure dark feels off to visitors. Keep cyan accent. Convert: Header, Hero, About, Experience, Projects/ProjectCard, Stack, Footer, `src/layouts/Base.astro` (body classes, theme-color), `src/styles/global.css`, `tailwind.config.mjs` if needed
-3. ✅ **Profile photo added** — cropped from `old-site/images/banner.jpg` (5-years-old photo, user is OK with it) → `public/profile.jpg` (crop coords in `scripts/images.mjs`: left 200, top 450, w 1000, h 1250 of 3995×3286). Hero should show it (was going to be right side of hero, ~340×420 rounded-3xl)
-4. ✅ **Side project images copied**: `old-site/images/masanote.png|triolingo.png|dropping.png` → `public/` (dropping.gif exists too if animation wanted). ⬜ ProjectCard.astro still needs to render the images (add `image` field to side projects in `src/data/projects.ts` and an `<img>` in the card, top of card, rounded, border)
+1. ✅ Logo `~/masa-cheung` → replaced with **profile photo + "Masa Cheung" text** (Header.astro)
+2. ✅ **Whole site switched to light theme** — white/zinc-50 bg, zinc-900 headings, zinc-600 body, cyan-600/700 accent, border-zinc-200 cards. All components + Base.astro (theme-color #ffffff, favicon = profile.jpg) converted. Build verified passing.
+3. ✅ **Profile photo in Hero** — right column, 340×420 rounded-3xl, glow behind, `public/profile.jpg`
+4. ✅ **Side project images rendered** — `image` field added to MasaNote/Triolingo/Dropping Down in projects.ts; ProjectCard shows `<img>` (aspect-video, object-top, hover zoom) above content, linked to project
 
 ### Where the work stopped exactly
-- `scripts/images.mjs` written + run OK (profile.jpg, masanote.png, triolingo.png, dropping.png all in `public/`)
-- New light-theme **Header.astro** and **Hero.astro** were drafted but NOT saved (write blocked, session died) — the dark versions are still on disk. Re-do the conversion.
-- Still dark on disk: Header, Hero, About, Experience, Projects, ProjectCard, Stack, Footer, Base.astro, global.css
-- Light theme direction already chosen: white/zinc-50 background, `zinc-900` headings, `zinc-600` body text, cyan-600/700 accent, `border-zinc-200` cards, subtle radial-dot background in Hero
+- (historical) `scripts/images.mjs` written + run OK; light Header/Hero drafted but not saved when session died
+- RESOLVED: all 9 components + Base.astro converted to light, image fields wired, build green, dist verified (profile.jpg ×2, 3 project imgs, 0 dark classes, theme-color #ffffff)
 
 ### After finishing:
 1. `npm run build` — must pass

@@ -6,6 +6,7 @@ export type Project = {
   tech: string[];
   links: { label: string; href: string }[];
   featured?: boolean;
+  image?: string;
 };
 
 export const Projects: Project[] = [
@@ -69,6 +70,7 @@ export const Projects: Project[] = [
     ],
     tech: ['Rails', 'React', 'Redux', 'PostgreSQL', 'SCSS'],
     links: [{ label: 'GitHub', href: 'https://github.com/masacheung/MasaNote' }],
+    image: '/masanote.png',
   },
   {
     name: 'Triolingo',
@@ -82,6 +84,7 @@ export const Projects: Project[] = [
     ],
     tech: ['MongoDB', 'Express.js', 'React', 'Node.js'],
     links: [{ label: 'GitHub', href: 'https://github.com/masacheung/Triolingo' }],
+    image: '/triolingo.png',
   },
   {
     name: 'Dropping Down',
@@ -98,5 +101,6 @@ export const Projects: Project[] = [
       { label: 'GitHub', href: 'https://github.com/masacheung/dropping_down' },
       { label: 'Play it', href: 'https://masacheung.github.io/dropping_down/' },
     ],
+    image: '/dropping.png',
   },
 ];
