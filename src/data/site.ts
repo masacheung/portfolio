@@ -1,4 +1,6 @@
 export const Site = {
+  // Site is deployed at the /portfolio subpath of the GitHub user site (no trailing slash)
+  base: '/portfolio',
   name: 'Masa Cheung',
   title: 'Masa Cheung — Software Engineer',
   description:

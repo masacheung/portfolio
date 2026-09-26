@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const canonical = new URL(Astro.url.pathname, Astro.site.origin);
+const base = Site.base;
 ---
 
 <!doctype html>
@@ -21,14 +22,14 @@ const canonical = new URL(Astro.url.pathname, Astro.site.origin);
     <meta property="og:title" content={Site.title} />
     <meta property="og:description" content={Site.description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={new URL(Site.ogImage, Astro.site.origin)} />
+    <meta property="og:image" content={`${Astro.site.origin}${base}${Site.ogImage}`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={Site.title} />
     <meta name="twitter:description" content={Site.description} />
-    <meta name="twitter:image" content={new URL(Site.ogImage, Astro.site.origin)} />
+    <meta name="twitter:image" content={`${Astro.site.origin}${base}${Site.ogImage}`} />
 
     <!-- Favicon: M logo -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href={`${base}/favicon.png`} />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

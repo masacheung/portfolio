@@ -1,11 +1,12 @@
 ---
 import { Site } from '../data/site';
+const base = Site.base;
 ---
 
 <header class="fixed top-0 inset-x-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur-md">
   <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
     <a href="#top" class="flex items-center gap-3">
-      <img src="/profile.jpg" alt="Masa Cheung" class="h-9 w-9 rounded-full object-cover ring-2 ring-cyan-500/30" />
+      <img src={`${base}/profile.jpg`} alt="Masa Cheung" class="h-9 w-9 rounded-full object-cover ring-2 ring-cyan-500/30" />
       <span class="text-base font-semibold tracking-tight text-zinc-900">Masa Cheung</span>
     </a>
     <div class="hidden items-center gap-8 text-sm text-zinc-600 md:flex" id="nav-links">
@@ -15,7 +16,7 @@ import { Site } from '../data/site';
       <a class="transition hover:text-zinc-900" href="#stack">Stack</a>
       <a class="transition hover:text-zinc-900" href="#contact">Contact</a>
       <a
-        href={Site.resumeUrl}
+        href={`${base}${Site.resumeUrl}`}
         target="_blank"
         rel="noopener noreferrer"
         class="rounded-md border border-cyan-600/40 px-3 py-1.5 font-mono text-xs text-cyan-700 transition hover:bg-cyan-50"
@@ -38,7 +39,7 @@ import { Site } from '../data/site';
       <a class="transition hover:text-zinc-900" href="#projects">Projects</a>
       <a class="transition hover:text-zinc-900" href="#stack">Stack</a>
       <a class="transition hover:text-zinc-900" href="#contact">Contact</a>
-      <a class="font-mono text-xs text-cyan-700" href={Site.resumeUrl} target="_blank" rel="noopener noreferrer">Resume</a>
+      <a class="font-mono text-xs text-cyan-700" href={`${base}${Site.resumeUrl}`} target="_blank" rel="noopener noreferrer">Resume</a>
     </div>
   </div>
 </header>

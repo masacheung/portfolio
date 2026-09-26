@@ -1,5 +1,6 @@
 ---
 import { Site } from '../data/site';
+const base = Site.base;
 ---
 
 <section id="about" class="border-t border-zinc-200 py-24 md:py-32">
@@ -53,7 +54,7 @@ import { Site } from '../data/site';
 
     <div class="reveal mt-10 flex flex-wrap items-center gap-4">
       <a
-        href={Site.resumeUrl}
+        href={`${base}${Site.resumeUrl}`}
         target="_blank"
         rel="noopener noreferrer"
         class="rounded-md bg-cyan-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-700"

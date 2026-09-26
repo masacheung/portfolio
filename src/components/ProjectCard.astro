@@ -1,6 +1,8 @@
 ---
 import type { Project } from '../data/projects';
+import { Site } from '../data/site';
 const { project, big = false } = Astro.props;
+const base = Site.base;
 ---
 
 <article
@@ -17,7 +19,7 @@ const { project, big = false } = Astro.props;
         class="mb-5 block overflow-hidden rounded-lg border border-zinc-200 bg-zinc-100 md:mb-0"
       >
         <img
-          src={project.image}
+          src={`${base}${project.image}`}
           alt={`${project.name} screenshot`}
           loading="lazy"
           class="aspect-video w-full object-cover object-top transition duration-300 group-hover:scale-[1.02]"
@@ -60,7 +62,7 @@ const { project, big = false } = Astro.props;
     <div class="flex flex-wrap gap-4 text-sm">
       {project.links.map((l) => (
         <a
-          href={l.href}
+          href={l.href.startsWith('http') ? l.href : `${base}${l.href}`}
           target="_blank"
           rel="noopener noreferrer"
           class="font-mono text-xs text-cyan-700 transition hover:text-cyan-800"
