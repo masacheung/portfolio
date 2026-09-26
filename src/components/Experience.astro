@@ -1,0 +1,35 @@
+---
+import { Experience } from '../data/experience';
+---
+
+<section id="experience" class="border-t border-zinc-200 bg-zinc-50 py-24 md:py-32">
+  <div class="mx-auto max-w-6xl px-5">
+    <h2 class="reveal font-mono text-sm uppercase tracking-[0.3em] text-cyan-700">Experience</h2>
+    <h3 class="reveal mt-3 text-3xl font-bold text-zinc-900 md:text-4xl">Where I've worked</h3>
+
+    <div class="mt-14 space-y-12">
+      {
+        Experience.map((job) => (
+          <article class="reveal relative border-l border-zinc-300 pl-8 md:pl-10">
+            <span class="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-cyan-500"></span>
+            <p class="font-mono text-xs uppercase tracking-widest text-zinc-500">
+              {job.company} · {job.location}
+            </p>
+            <div class="mt-2 flex flex-wrap items-baseline justify-between gap-2">
+              <h4 class="text-xl font-semibold text-zinc-900">{job.role}</h4>
+              <span class="font-mono text-xs text-zinc-500">{job.period}</span>
+            </div>
+            <ul class="mt-4 space-y-2.5 text-[15px] leading-relaxed text-zinc-600">
+              {job.bullets.map((b) => (
+                <li class="flex gap-3">
+                  <span class="mt-[9px] h-1 w-3 shrink-0 rounded-full bg-zinc-300"></span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

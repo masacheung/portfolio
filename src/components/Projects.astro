@@ -1,0 +1,25 @@
+---
+import { Projects } from '../data/projects';
+import ProjectCard from './ProjectCard.astro';
+
+const featured = Projects.filter((p) => p.featured);
+const personal = Projects.filter((p) => !p.featured);
+---
+
+<section id="projects" class="border-t border-zinc-200 py-24 md:py-32">
+  <div class="mx-auto max-w-6xl px-5">
+    <h2 class="reveal font-mono text-sm uppercase tracking-[0.3em] text-cyan-700">Projects</h2>
+    <h3 class="reveal mt-3 text-3xl font-bold text-zinc-900 md:text-4xl">Things I've built</h3>
+
+    <p class="reveal mt-4 max-w-2xl text-zinc-500">Work at BGC Partners first, side projects below.</p>
+
+    <div class="mt-12 space-y-6">
+      {featured.map((p) => <ProjectCard project={p} big={true} />)}
+    </div>
+
+    <h4 class="reveal mt-20 font-mono text-sm uppercase tracking-[0.3em] text-zinc-500">Side projects</h4>
+    <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {personal.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </div>
+</section>

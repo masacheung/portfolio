@@ -1,0 +1,56 @@
+---
+import { Site } from '../data/site';
+---
+
+<header class="fixed top-0 inset-x-0 z-50 border-b border-zinc-200 bg-white/80 backdrop-blur-md">
+  <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+    <a href="#top" class="flex items-center gap-3">
+      <img src="/profile.jpg" alt="Masa Cheung" class="h-9 w-9 rounded-full object-cover ring-2 ring-cyan-500/30" />
+      <span class="text-base font-semibold tracking-tight text-zinc-900">Masa Cheung</span>
+    </a>
+    <div class="hidden items-center gap-8 text-sm text-zinc-600 md:flex" id="nav-links">
+      <a class="transition hover:text-zinc-900" href="#about">About</a>
+      <a class="transition hover:text-zinc-900" href="#experience">Experience</a>
+      <a class="transition hover:text-zinc-900" href="#projects">Projects</a>
+      <a class="transition hover:text-zinc-900" href="#stack">Stack</a>
+      <a class="transition hover:text-zinc-900" href="#contact">Contact</a>
+      <a
+        href={Site.resumeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-md border border-cyan-600/40 px-3 py-1.5 font-mono text-xs text-cyan-700 transition hover:bg-cyan-50"
+      >
+        Resume
+      </a>
+    </div>
+    <button id="menu-btn" class="text-zinc-600 md:hidden" aria-label="Toggle menu" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="4" y1="7" x2="20" y2="7"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="17" x2="20" y2="17"></line>
+      </svg>
+    </button>
+  </nav>
+  <div id="mobile-menu" class="hidden border-t border-zinc-200 bg-white/95 px-5 py-4 md:hidden">
+    <div class="flex flex-col gap-4 text-sm text-zinc-700">
+      <a class="transition hover:text-zinc-900" href="#about">About</a>
+      <a class="transition hover:text-zinc-900" href="#experience">Experience</a>
+      <a class="transition hover:text-zinc-900" href="#projects">Projects</a>
+      <a class="transition hover:text-zinc-900" href="#stack">Stack</a>
+      <a class="transition hover:text-zinc-900" href="#contact">Contact</a>
+      <a class="font-mono text-xs text-cyan-700" href={Site.resumeUrl} target="_blank" rel="noopener noreferrer">Resume</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => {
+    const open = menu.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', String(open));
+  });
+  menu?.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => menu.classList.add('hidden'))
+  );
+</script>

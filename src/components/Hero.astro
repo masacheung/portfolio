@@ -1,0 +1,59 @@
+---
+import { Site } from '../data/site';
+---
+
+<section id="top" class="relative flex min-h-screen items-center overflow-hidden pt-16">
+  <!-- backdrop -->
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute -top-40 left-1/2 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-cyan-300/25 blur-[120px]"></div>
+    <div
+      class="absolute inset-0 opacity-60"
+      style="background-image: radial-gradient(circle at 1px 1px, rgba(15,23,42,0.06) 1px, transparent 0); background-size: 32px 32px;"
+    ></div>
+  </div>
+
+  <div class="relative mx-auto grid w-full max-w-6xl items-center gap-12 px-5 py-24 md:grid-cols-[1.4fr_1fr] md:py-28">
+    <div>
+      <p class="animate-fade-up font-mono text-sm text-cyan-700">
+        <span class="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-cyan-500 align-middle"></span>
+        Available for interesting problems
+      </p>
+      <h1 class="animate-fade-up mt-6 text-5xl font-bold tracking-tight text-zinc-900 md:text-7xl" style="animation-delay: 100ms">
+        Masa Cheung
+      </h1>
+      <p class="animate-fade-up mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600 md:text-xl" style="animation-delay: 200ms">
+        Assistant Vice President & Software Engineer at
+        <span class="font-semibold text-zinc-900">BGC Partners</span>. I build real-time trading
+        platforms, drag-and-drop financial instruments UIs, and the CI/CD
+        pipelines that ship them — with
+        <span class="font-semibold text-cyan-700">React</span>,
+        <span class="font-semibold text-cyan-700">Node.js</span> and
+        <span class="font-semibold text-cyan-700">WebSockets</span>.
+      </p>
+      <div class="animate-fade-up mt-10 flex flex-wrap items-center gap-4" style="animation-delay: 300ms">
+        <a href="#projects" class="rounded-md bg-cyan-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-700">
+          View my work
+        </a>
+        <a href={Site.resumeUrl} target="_blank" rel="noopener noreferrer" class="rounded-md border border-zinc-300 bg-white/60 px-5 py-3 text-sm font-semibold text-zinc-800 transition hover:border-cyan-500 hover:text-cyan-700">
+          Read my resume
+        </a>
+      </div>
+      <div class="animate-fade-up mt-12 flex gap-6 text-sm text-zinc-500" style="animation-delay: 400ms">
+        <a href={Site.github} target="_blank" rel="noopener noreferrer" class="transition hover:text-zinc-900">GitHub</a>
+        <a href={Site.linkedin} target="_blank" rel="noopener noreferrer" class="transition hover:text-zinc-900">LinkedIn</a>
+        <a href={`mailto:${Site.email}`} class="transition hover:text-zinc-900">Email</a>
+      </div>
+    </div>
+
+    <div class="animate-fade-up hidden justify-end md:flex" style="animation-delay: 300ms">
+      <div class="relative">
+        <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-tr from-cyan-400/30 to-cyan-600/10 blur-xl"></div>
+        <img
+          src="/profile.jpg"
+          alt="Masa Cheung"
+          class="relative h-[420px] w-[340px] rounded-3xl object-cover shadow-xl ring-1 ring-zinc-200"
+        />
+      </div>
+    </div>
+  </div>
+</section>

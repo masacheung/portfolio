@@ -1,0 +1,67 @@
+---
+import { Site } from '../data/site';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+const canonical = new URL(Astro.url.pathname, Astro.site.origin);
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{Site.title}</title>
+    <meta name="description" content={Site.description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={Site.title} />
+    <meta property="og:description" content={Site.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(Site.ogImage, Astro.site.origin)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={Site.title} />
+    <meta name="twitter:description" content={Site.description} />
+    <meta name="twitter:image" content={new URL(Site.ogImage, Astro.site.origin)} />
+
+    <!-- Favicon: M logo -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body class="min-h-screen bg-white font-sans text-zinc-700 antialiased">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      }
+    },
+    { threshold: 0.12 }
+  );
+  document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+</script>

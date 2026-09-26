@@ -1,0 +1,73 @@
+---
+import type { Project } from '../data/projects';
+const { project, big = false } = Astro.props;
+---
+
+<article
+  class={`reveal group relative flex flex-col rounded-xl border border-zinc-200 bg-white p-6 shadow-sm transition hover:border-cyan-400 hover:shadow-md ${
+    big ? 'md:flex-row md:gap-8' : ''
+  }`}
+>
+  {
+    project.image && (
+      <a
+        href={project.links[0]?.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mb-5 block overflow-hidden rounded-lg border border-zinc-200 bg-zinc-100 md:mb-0"
+      >
+        <img
+          src={project.image}
+          alt={`${project.name} screenshot`}
+          loading="lazy"
+          class="aspect-video w-full object-cover object-top transition duration-300 group-hover:scale-[1.02]"
+        />
+      </a>
+    )
+  }
+  <div class={big ? 'md:flex-1' : ''}>
+    <div class="flex flex-wrap items-center gap-3">
+      <h4 class="text-lg font-semibold text-zinc-900">{project.name}</h4>
+      {
+        project.featured && (
+          <span class="rounded-full border border-cyan-600/30 bg-cyan-50 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-cyan-700">
+            At work
+          </span>
+        )
+      }
+    </div>
+    <p class="mt-1 text-sm text-zinc-500">{project.tagline}</p>
+    <p class="mt-4 text-[15px] leading-relaxed text-zinc-600">{project.description}</p>
+    {
+      big && (
+        <ul class="mt-4 space-y-2 text-sm text-zinc-500">
+          {project.highlights.slice(0, 2).map((h) => (
+            <li class="flex gap-2.5">
+              <span class="mt-[8px] h-1 w-2.5 shrink-0 rounded-full bg-cyan-500/60"></span>
+              {h}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+  <div class={`mt-5 flex flex-col gap-4 ${big ? 'md:mt-0 md:w-56 md:justify-between' : ''}`}>
+    <ul class="flex flex-wrap gap-2">
+      {project.tech.map((t) => (
+        <li class="rounded-md bg-zinc-100 px-2 py-1 font-mono text-[11px] text-zinc-600">{t}</li>
+      ))}
+    </ul>
+    <div class="flex flex-wrap gap-4 text-sm">
+      {project.links.map((l) => (
+        <a
+          href={l.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-mono text-xs text-cyan-700 transition hover:text-cyan-800"
+        >
+          {l.label} →
+        </a>
+      ))}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,47 @@
+---
+import { Site } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<footer id="contact" class="border-t border-zinc-200 bg-zinc-50">
+  <div class="mx-auto max-w-6xl px-5 py-24 text-center">
+    <p class="reveal font-mono text-sm uppercase tracking-[0.3em] text-cyan-700">Contact</p>
+    <h3 class="reveal mt-4 text-3xl font-bold text-zinc-900 md:text-5xl">Let's build something.</h3>
+    <p class="reveal mx-auto mt-4 max-w-xl text-zinc-500">
+      Open to interesting problems, new teams, and good conversations about trading systems.
+    </p>
+    <div class="reveal mt-10 flex flex-wrap items-center justify-center gap-4">
+      <a
+        href={`mailto:${Site.email}`}
+        class="rounded-md bg-cyan-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-cyan-700"
+      >
+        {Site.email}
+      </a>
+      <a
+        href={Site.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-md border border-zinc-300 px-6 py-3 text-sm font-semibold text-zinc-800 transition hover:border-cyan-500 hover:text-cyan-700"
+      >
+        LinkedIn
+      </a>
+      <a
+        href={Site.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-md border border-zinc-300 px-6 py-3 text-sm font-semibold text-zinc-800 transition hover:border-cyan-500 hover:text-cyan-700"
+      >
+        GitHub
+      </a>
+    </div>
+  </div>
+  <div class="border-t border-zinc-200 py-6">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-5 font-mono text-xs text-zinc-500 md:flex-row">
+      <p>© {year} Masa Cheung</p>
+      <p>
+        Built with <a href="https://astro.build" class="hover:text-zinc-700">Astro</a> +
+        <a href="https://tailwindcss.com" class="hover:text-zinc-700"> Tailwind</a>
+      </p>
+    </div>
+  </div>
+</footer>
