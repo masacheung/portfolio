@@ -1,0 +1,73 @@
+---
+import { Site } from '../data/site';
+---
+
+<section id="about" class="border-t border-white/5 py-24 md:py-32">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="grid gap-12 md:grid-cols-[1fr_2fr] md:gap-16">
+      <div>
+        <h2 class="reveal font-mono text-sm uppercase tracking-[0.3em] text-accent">About</h2>
+        <h3 class="reveal mt-3 text-3xl font-bold text-white">The short version</h3>
+      </div>
+      <div class="reveal space-y-5 text-[15px] leading-relaxed text-zinc-400 md:text-base">
+        <p>
+          I'm a software engineer with a passion for building things that are fast, intuitive, and
+          built to last. For the past four years I've worked deep in
+          <span class="text-white">real-time financial trading systems</span> at BGC Partners —
+          a global brokerage and financial technology firm.
+        </p>
+        <p>
+          I've led Volume Match from a UK-focused tool into a global trading system (market reach
+          up 800%, client base up 500%), own the Product Builder auction platform end to end, and
+          built the CI/CD and monitoring infrastructure — GitLab CI, Docker, Prometheus, Grafana —
+          that keeps everything shipping and observable.
+        </p>
+        <p>
+          I care a lot about the details: drag-and-drop trading UIs that make a broker's day easier,
+          WebSocket message validation that keeps a live auction running without a hitch, and test
+          suites that make production deploys boring. I thrive in collaborative, agile teams where
+          good engineering and good product thinking go hand in hand.
+        </p>
+        <p>
+          Off the clock I keep building — side projects in JavaScript, a love of
+          <span class="text-white">F1</span> (big Lewis Hamilton fan), and
+          <span class="text-white">road cycling</span>.
+        </p>
+      </div>
+    </div>
+
+    <div class="reveal mt-16 grid gap-4 sm:grid-cols-3">
+      <div class="rounded-xl border border-white/10 bg-ink-800/60 p-6 text-center">
+        <p class="text-4xl font-bold text-accent">4+</p>
+        <p class="mt-1 text-sm text-zinc-500">years at BGC Partners</p>
+      </div>
+      <div class="rounded-xl border border-white/10 bg-ink-800/60 p-6 text-center">
+        <p class="text-4xl font-bold text-accent">800%</p>
+        <p class="mt-1 text-sm text-zinc-500">market reach growth — Volume Match</p>
+      </div>
+      <div class="rounded-xl border border-white/10 bg-ink-800/60 p-6 text-center">
+        <p class="text-4xl font-bold text-accent">60%</p>
+        <p class="mt-1 text-sm text-zinc-500">less system complexity via CI/CD rebuild</p>
+      </div>
+    </div>
+
+    <div class="reveal mt-10 flex flex-wrap items-center gap-4">
+      <a
+        href={Site.resumeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-md bg-accent px-5 py-3 text-sm font-semibold text-ink-950 transition hover:bg-accent-soft"
+      >
+        Download resume
+      </a>
+      <a
+        href={Site.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-md border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-accent/50 hover:text-accent"
+      >
+        LinkedIn profile
+      </a>
+    </div>
+  </div>
+</section>

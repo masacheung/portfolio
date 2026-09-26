@@ -1,0 +1,43 @@
+---
+import { Site } from '../data/site';
+---
+
+<section id="top" class="relative flex min-h-screen items-center overflow-hidden">
+  <!-- backdrop -->
+  <div class="pointer-events-none absolute inset-0">
+    <div class="absolute -top-32 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-accent/10 blur-[120px]"></div>
+    <div class="absolute inset-0 opacity-[0.15]" style="background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 48px 48px;"></div>
+  </div>
+
+  <div class="relative mx-auto w-full max-w-6xl px-5 py-32">
+    <p class="animate-fade-up font-mono text-sm text-accent">
+      <span class="mr-2 inline-block h-2 w-2 animate-pulse rounded-full bg-accent align-middle"></span>
+      Available for interesting problems
+    </p>
+    <h1 class="animate-fade-up mt-6 text-5xl font-bold tracking-tight text-white md:text-7xl" style="animation-delay: 100ms">
+      Masa Cheung
+    </h1>
+    <p class="animate-fade-up mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 md:text-xl" style="animation-delay: 200ms">
+      Assistant Vice President & Software Engineer at
+      <span class="text-white">BGC Partners</span>. I build real-time trading
+      platforms, drag-and-drop financial instruments UIs, and the CI/CD
+      pipelines that ship them — with
+      <span class="text-accent">React</span>,
+      <span class="text-accent">Node.js</span> and
+      <span class="text-accent">WebSockets</span>.
+    </p>
+    <div class="animate-fade-up mt-10 flex flex-wrap items-center gap-4" style="animation-delay: 300ms">
+      <a href="#projects" class="rounded-md bg-accent px-5 py-3 text-sm font-semibold text-ink-950 transition hover:bg-accent-soft">
+        View my work
+      </a>
+      <a href={Site.resumeUrl} target="_blank" rel="noopener noreferrer" class="rounded-md border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-accent/50 hover:text-accent">
+        Read my resume
+      </a>
+    </div>
+    <div class="animate-fade-up mt-12 flex gap-6 text-sm text-zinc-500" style="animation-delay: 400ms">
+      <a href={Site.github} target="_blank" rel="noopener noreferrer" class="transition hover:text-white">GitHub</a>
+      <a href={Site.linkedin} target="_blank" rel="noopener noreferrer" class="transition hover:text-white">LinkedIn</a>
+      <a href={`mailto:${Site.email}`} class="transition hover:text-white">Email</a>
+    </div>
+  </div>
+</section>
