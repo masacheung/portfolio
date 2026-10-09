@@ -38,6 +38,13 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## Updating the resume
+
+Replace `assets/masa_cheung_resume.pdf` with your latest resume. Both
+`npm run dev` and `npm run build` automatically copy it to `public/resume.pdf`,
+which is served by the site's resume links. GitHub Pages runs `npm run build`
+on every push to `main`, so the deployed download uses that same file.
+
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

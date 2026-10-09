@@ -7,7 +7,9 @@
     "node": "^18.17.1 || ^20.3.0 || >=22.0.0"
   },
   "scripts": {
+    "predev": "node scripts/sync-resume.mjs",
     "dev": "astro dev",
+    "prebuild": "node scripts/sync-resume.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
