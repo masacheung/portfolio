@@ -17,7 +17,7 @@ import { Experience } from '../data/experience';
             </p>
             <div class="mt-2 flex flex-wrap items-baseline justify-between gap-2">
               <h4 class="text-xl font-semibold text-zinc-900">{job.role}</h4>
-              <span class="font-mono text-xs text-zinc-500">{job.period}</span>
+              {'period' in job && <span class="font-mono text-xs text-zinc-500">{job.period}</span>}
             </div>
             <ul class="mt-4 space-y-2.5 text-[15px] leading-relaxed text-zinc-600">
               {job.bullets.map((b) => (

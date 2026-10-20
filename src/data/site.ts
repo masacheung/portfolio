@@ -4,7 +4,7 @@ export const Site = {
   name: 'Masa Cheung',
   title: 'Masa Cheung — Software Engineer',
   description:
-    'Assistant Vice President & Software Engineer at BGC Partners. Full-stack engineer building real-time trading platforms, CI/CD infrastructure, and monitoring systems with React, Node.js, and WebSockets.',
+    'Software Engineer at BGC Partners building real-time trading platforms with React, Redux, Vue.js, and WebSockets. Work spans Quick History, Credit Match, Product Builder, Volume Match, and Event Service.',
   email: 'cheung.masa@gmail.com',
   github: 'https://github.com/masacheung',
   linkedin: 'https://www.linkedin.com/in/man-tat-masa-cheung-725b39b8',

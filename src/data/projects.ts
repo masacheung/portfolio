@@ -12,50 +12,67 @@ export type Project = {
 export const Projects: Project[] = [
   {
     name: 'Quick History',
-    tagline: 'AI-assisted rewrite: Java → JavaScript',
+    tagline: 'Java → React & Redux · production delivery in four months',
     description:
-      'A legacy-modernization rewrite of a trading history application, from Java to JavaScript. Leveraged AI-assisted development to accelerate the port while keeping behavior faithful to the original system.',
+      'Owned the rewrite of a legacy trade and order history application from Java to React and Redux. Implemented APIs, SQL queries, and Credit Match schema mappings, eliminating the Market Data dependency and delivering to production within four months.',
     highlights: [
-      'Rewrote the application from Java to JavaScript with AI assistance, cutting porting effort.',
-      'Re-plumbed trade history and order history onto a different data source, decoupling the app from the legacy pipeline.',
-      'Kept the user-facing history experience identical while changing the plumbing underneath.',
+      'Built APIs and SQL queries for trade and order history backed by Credit Match.',
+      'Delivered the React and Redux rewrite to production within four months.',
     ],
-    tech: ['JavaScript', 'AI-assisted rewrite', 'Data integration', 'Legacy modernization'],
-    links: [
-      { label: 'Talk about it', href: 'https://www.linkedin.com/in/man-tat-masa-cheung-725b39b8/' },
+    tech: ['React', 'Redux', 'JavaScript', 'SQL', 'APIs', 'Legacy modernization'],
+    links: [{ label: 'Resume', href: '/resume.pdf' }],
+    featured: true,
+  },
+  {
+    name: 'Credit Match Entitlements',
+    tagline: 'Java & Oracle · configurable trading permissions',
+    description:
+      'Delivered SEF/DTO access overrides in Java for a major trading desk within three days. Extended the solution with an Oracle configuration table in the DataDepot schema and cross-schema Credit Match entitlement checks.',
+    highlights: [
+      'Enabled Product Support to manage buyer and seller permissions by business, desk, and product.',
+      'Delivered the initial trading desk access overrides within three days.',
     ],
+    tech: ['Java', 'Oracle', 'SQL', 'Access controls'],
+    links: [{ label: 'Resume', href: '/resume.pdf' }],
     featured: true,
   },
   {
     name: 'Volume Match',
-    tagline: 'Global volume-based trading platform · ~4 years',
+    tagline: '2 → 7 desks · 6 → 22 layouts across the UK and US',
     description:
-      'A JavaScript trading platform for volume-matched auctions of bonds and rates. I served as the primary engineer and led its expansion from a UK-only tool into a global system.',
+      'Partnered with trading desks and project managers to build reusable Vue.js and Backbone.js components and JSON-driven matrix, triangular, and list layout builders. Enabled expansion from 2 to 7 desks and from 6 to 22 layouts over three years.',
     highlights: [
-      'Architected the expansion from UK-centric to a global trading system — market reach grew 800%, client base 500%.',
-      'Built trading flows for Interest Rate Options, UK/EU Inflation, and European Government Bonds — entirely new product lines.',
-      'Designed the drag-and-drop UI for custom spread instruments (flexible 1:1 or default weighting) integrated with server-side instrument creation APIs.',
+      'Enabled live-auction spread and butterfly creation with drag-and-drop and search workflows.',
+      'Integrated WebSocket updates, instrument naming, price calculation, and buy/sell order submission.',
     ],
-    tech: ['JavaScript', 'React', 'WebSockets', 'Trading systems'],
-    links: [
-      { label: 'Resume', href: '/resume.pdf' },
-    ],
+    tech: ['Vue.js', 'Backbone.js', 'JavaScript', 'WebSockets', 'JSON'],
+    links: [{ label: 'Resume', href: '/resume.pdf' }],
     featured: true,
   },
   {
     name: 'Product Builder',
-    tagline: 'Mission-critical auction platform · ~2 years',
+    tagline: 'React auction tools · distributed team delivery',
     description:
-      'A React application for launching and configuring auctions. As its sole owner, I lead its roadmap, sprint planning, and cross-time-zone stakeholder alignment.',
+      'Owned React development and delivery, coordinating sprint priorities across distributed teams. Built dynamic forms with reusable components and integrated instrument-enrichment services for storage in Credit Match’s Oracle database.',
     highlights: [
-      'Sole owner: roadmap, Agile sprint planning across multiple time zones, and engineering/business alignment.',
-      'End-to-end delivery of React auction interfaces, coordinating Java-side auction launches.',
-      'Rigorous WebSocket message validation for reliability and throughput; TDD as the standard for new work.',
+      'Built reusable dynamic forms and integrated instrument-enrichment services.',
+      'Implemented a reusable API for weighted and unweighted spreads and butterflies, defining WebSocket contracts with backend engineers.',
     ],
-    tech: ['React', 'Redux', 'TypeScript', 'WebSockets', 'TDD'],
-    links: [
-      { label: 'Resume', href: '/resume.pdf' },
+    tech: ['React', 'JavaScript', 'Oracle', 'WebSockets', 'APIs'],
+    links: [{ label: 'Resume', href: '/resume.pdf' }],
+    featured: true,
+  },
+  {
+    name: 'Deployment & Event Monitoring',
+    tagline: 'GitLab CI/CD · one hour less manual monitoring per day',
+    description:
+      'Automated testing, Docker image publishing to Nexus, and Docker Compose deployments across eight development/QA environments, beta, and production. Built a Dockerized Node.js and Express service to capture user events and trade round-trip latency.',
+    highlights: [
+      'Enabled single-click releases and rollback to prior versions, restricting production deployments to Git tags.',
+      'Integrated Prometheus metrics, PostgreSQL event logs, and Grafana dashboards and failure alerts, saving one hour of manual monitoring per day.',
     ],
+    tech: ['Node.js', 'Express', 'Docker', 'GitLab CI/CD', 'Nexus', 'Prometheus', 'PostgreSQL', 'Grafana'],
+    links: [{ label: 'Resume', href: '/resume.pdf' }],
     featured: true,
   },
   {
